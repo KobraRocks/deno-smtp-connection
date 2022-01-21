@@ -6,8 +6,8 @@ It helps sending smtp server commands and exposes the stmp server response.
 
 ## Usage
 ```ts
-import * as SmtpConnection from '[github link here'](https://github.com/KobraRocks/deno-smtp-connection/blob/main/mod.ts);
-import type * as Smtp from '[github link here](https://github.com/KobraRocks/deno-smtp-connection/blob/main/mod.ts)'
+import * as SmtpConnection from 'https://github.com/KobraRocks/deno-smtp-connection/blob/main/mod.ts';
+import type * as Smtp from 'https://github.com/KobraRocks/deno-smtp-connection/blob/main/mod.ts';
 
 const options: Smtp.ConnectTlsOptions = {
     securityProtocol: 'TLS',
