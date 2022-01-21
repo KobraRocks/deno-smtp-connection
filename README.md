@@ -60,7 +60,8 @@ It probably comes from Deno itslef being strict on security,
 anyway you can log an issue in this repo and I will relay those kind of issues to the Deno Team.
 
 ## Scope of this module
-Anything that can increase the quality or performance of sending smtp server command and receiving smtp server response.
+- To optimize support for smtp connections using basic, Tls or StartTls protocols
+- Anything that can increase the quality or performance of sending smtp server command and receiving smtp server response.
 
 ## Out of scope of this module
 - Interpetation of smtp server responses
