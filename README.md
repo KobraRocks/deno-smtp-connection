@@ -5,9 +5,9 @@ This module is responsible to establish a connection with a Smtp Server.
 It helps sending smtp server commands and exposes the stmp server response.
 
 ## Features Roadmap
-- TLS connection => implemented on port 465
-- BASIC connection => To be tested
-- STARTTLS connection => To be tested
+- TLS connection on port 465 => implemented 
+- BASIC connection on port 25 => To be tested
+- STARTTLS connection on port 587 or 2525 => Buggy atm, not supported.
 
 ## Usage
 ```ts
@@ -42,12 +42,24 @@ if ( serverIsready ) {
 ```
 ## Test
 To run the test you must create a `test.config.json` file providing the necessary config.
+
 ```json
 {
+    "BASIC": {
+        "securityProtocol": "BASIC",
+        "hostname": "smtp.server.com",
+        "port": 25
+    },        
+    
     "TLS": {
         "securityProtocol": "TLS",
         "hostname": "smtp.server.com",
         "port": 465
+    },
+    "SARTTLS": {
+        "securityProtocol": "STARTTLS",
+        "hostname": "smtp.server.com",
+        "port": 587
     }
 }
 ```
