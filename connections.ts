@@ -21,7 +21,6 @@ export class Conn implements Deno.Conn {
         this.getOptions = () => options;
 
         this.#writer = new BufWriter( conn );
-        // this.#reader = new TextProtoReader( new BufReader( conn ) );
         this.#reader = new BufReader( conn );
     }
 
