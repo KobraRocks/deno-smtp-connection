@@ -4,6 +4,11 @@
 This module is responsible to establish a connection with a Smtp Server.
 It helps sending smtp server commands and exposes the stmp server response.
 
+## Features Roadmap
+- TLS connection => implemented on port 465
+- BASIC connection => To be tested
+- STARTTLS connection => To be tested
+
 ## Usage
 ```ts
 import * as SmtpConnection from 'https://github.com/KobraRocks/deno-smtp-connection/blob/main/mod.ts';
@@ -65,3 +70,6 @@ For this check the project Smtp Client.
 
 ## Contributing 
 you are welcome ;)
+
+## Thanks
+This module was inspired from [deno-smtp](https://github.com/manyuanrong/deno-smtp)
