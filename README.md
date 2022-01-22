@@ -44,6 +44,7 @@ if ( serverIsready ) {
 To run the test you must create a `test.config.json` file providing the necessary config.
 
 ```json
+// test.config.json
 {
     "BASIC": {
         "securityProtocol": "BASIC",
@@ -61,6 +62,19 @@ To run the test you must create a `test.config.json` file providing the necessar
         "hostname": "smtp.server.com",
         "port": 587
     }
+}
+```
+or you can pick the one you want to test
+```json
+// test.config.json
+{
+    "BASIC": null,
+    "TLS": {
+        "securityProtocol": "TLS",
+        "hostname": "smtp.server.com",
+        "port": 465
+    },
+    "SARTTLS": null
 }
 ```
 change `hostname` to the smtp address from an email provider.
