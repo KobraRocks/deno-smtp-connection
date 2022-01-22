@@ -20,7 +20,7 @@ Deno.test('Give TLS connection and Greets Smtp server', async () => {
     
     const serverReady = message?.startsWith('220');
 
-    const greetMessage = await tlsConn.tryCmd('HELO 127.0.0.1');
+    const greetMessage = await tlsConn.tryCmd('HELO 127.0.0.1\r\n');
     const serverGreet = greetMessage.pop();
     const greetSuccess = serverGreet?.startsWith('250'); 
 

@@ -61,7 +61,7 @@ export class Conn implements Deno.Conn {
      * @returns nothing
      */
     async #tryCmd ( smtpCmd: string ): Promise<void> {
-        const p: Uint8Array = this.#encoder.encode( smtpCmd + "\r\n" );
+        const p: Uint8Array = this.#encoder.encode( smtpCmd );
         const totalByteSize = p.byteLength;
 
         let byteSize = 0;
@@ -94,9 +94,10 @@ export class Conn implements Deno.Conn {
 
         // while server sends response to client continue to next line
         while ( true ) {
-
+            // console.log(`${this.constructor.name}.serverMessage() reader start reading`);
             const message = await this.#reader.readString('\n')
                 .catch( ( reason ) => { throw new Error(`${this.constructor.name}.serverMessage() this.#reader.readString() Error: ${reason.message}`)});
+            //console.log(`${this.constructor.name}.serverMessage() reader end reading: ${message}`);
 
             if ( message === null ) {
                 // a custom Error message mimicing a std smtp server message
@@ -108,10 +109,9 @@ export class Conn implements Deno.Conn {
 
             // console.log(`${this.constructor.name}.serverMessage() message: ${message}. Server sent last line ?`);
 
-            if ( isLastLine( message ) ) break;
+            if ( isLastLine( message ) ) return messages;
         }
-
-        return messages;
+        
     }
 
 }
