@@ -11,11 +11,11 @@ It helps sending smtp server commands and exposes the stmp server response.
 
 ## Usage
 ```ts
-import * as SmtpConnection from 'https://github.com/KobraRocks/deno-smtp-connection/blob/main/mod.ts';
-import type * as Smtp from 'https://github.com/KobraRocks/deno-smtp-connection/blob/main/mod.ts';
+import * as SmtpConnection from '../deno-smtp-connection/mod.ts';
+import type * as Smtp from '../deno-smtp-connection/mod.ts';
 
 const options: Smtp.ConnectTlsOptions = {
-    securityProtocol: 'TLS',
+    securityProtocol: 'TLS' as Smtp.SecurityProtocol,
     hostname: 'smtp.example.com',
     port: 465
 };
