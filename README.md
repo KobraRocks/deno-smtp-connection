@@ -11,8 +11,8 @@ It helps sending smtp server commands and exposes the stmp server response.
 
 ## Usage
 ```ts
-import * as SmtpConnection from '../deno-smtp-connection/mod.ts';
-import type * as Smtp from '../deno-smtp-connection/mod.ts';
+import * as SmtpConnection from "https://deno.land/x/smtp_connection@v0.2.1-alpha/mod.ts";
+import type * as Smtp from "https://deno.land/x/smtp_connection@v0.2.1-alpha/mod.ts";
 
 const options: Smtp.ConnectTlsOptions = {
     securityProtocol: 'TLS' as Smtp.SecurityProtocol,
@@ -93,7 +93,7 @@ anyway you can log an issue in this repo and I will relay those kind of issues t
 - Interpetation of smtp server responses
 - formating of smtp command
 
-For this check the project Smtp Client.
+For this check the project Smtp Client (I will publish soon).
 
 ## Contributing 
 you are welcome ;)
