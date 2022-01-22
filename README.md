@@ -31,7 +31,7 @@ const serverIsReady =  readyMessage.startsWith('220');
 // then send greeting
 
 if ( serverIsready ) {
-    const greetResponse: string[] = await smtpConn.tryCmd('HELO wolrd.com');
+    const greetResponse: string[] = await smtpConn.tryCmd('HELO wolrd.com\r\n');
     const greetMessage = greetResponse.pop();
     const greetSuccess = greetMessage.startsWith('250');
 
