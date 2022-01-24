@@ -23,7 +23,7 @@ if ( BASIC ) {
         
         const serverReady = message?.startsWith('220');
     
-        const greetMessage = await Conn.tryCmd('HELO 127.0.0.1\r\n');
+        const greetMessage = await Conn.clientCommands('HELO 127.0.0.1\r\n');
         const serverGreet = greetMessage.pop();
         const greetSuccess = serverGreet?.startsWith('250'); 
     
@@ -55,7 +55,7 @@ if ( TLS ) {
         
         const serverReady = message?.startsWith('220');
     
-        const greetMessage = await tlsConn.tryCmd('HELO 127.0.0.1\r\n');
+        const greetMessage = await tlsConn.clientCommands('HELO 127.0.0.1\r\n');
         const serverGreet = greetMessage.pop();
         const greetSuccess = serverGreet?.startsWith('250'); 
     
@@ -87,7 +87,7 @@ if ( STARTTLS ) {
         
         const serverReady = message?.startsWith('220');
     
-        const greetMessage = await tlsConn.tryCmd('HELO 127.0.0.1\r\n');
+        const greetMessage = await tlsConn.clientCommands('HELO 127.0.0.1\r\n');
         const serverGreet = greetMessage.pop();
         const greetSuccess = serverGreet?.startsWith('250'); 
     

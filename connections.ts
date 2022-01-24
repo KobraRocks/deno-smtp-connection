@@ -43,7 +43,7 @@ export class Conn implements Deno.Conn {
      * @param cmds A smtp command or a list of smtp commands to send to the smtp server
      * @returns A Promise whith the smtp server response when fullfilled
      */
-    async tryCmd ( cmds: string | string[] ): Promise<string[]>  {
+    async clientCommands ( cmds: string | string[] ): Promise<string[]>  {
 
         if ( Array.isArray( cmds ) ) {
             for ( const cmd of cmds ) {
