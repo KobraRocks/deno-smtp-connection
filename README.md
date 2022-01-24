@@ -11,7 +11,7 @@ It helps sending smtp server commands and exposes the stmp server response.
 
 ## Usage
 ```ts
-import * as SmtpConnection from "https://deno.land/x/smtp_connection@v0.2.1-alpha/mod.ts";
+import * as SmtpConnection from "https://deno.land/x/smtp_connection@v0.2.4-alpha/mod.ts";
 import type * as Smtp from "https://deno.land/x/smtp_connection@v0.2.1-alpha/mod.ts";
 
 const options: Smtp.ConnectTlsOptions = {
