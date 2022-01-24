@@ -24,7 +24,7 @@ const smtpConn = SmtpConnection.giveConnection( options );
 
 // check if smtp server is ready
 
-const serverResponse: string[] = await smtpConn.serverMessage();
+const serverResponse: string[] = await smtpConn.serverReplies();
 const readyMessage = serverResponse.pop();
 const serverIsReady =  readyMessage.startsWith('220');
 

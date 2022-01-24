@@ -53,7 +53,7 @@ export class Conn implements Deno.Conn {
             await this.#tryCmd( cmds );
         }
 
-        return this.serverMessage();
+        return this.serverReplies();
     }
     /** Send a smtp command to the smtp server
      * 
@@ -86,18 +86,18 @@ export class Conn implements Deno.Conn {
      * 
      * @returns A Promise containing an array of server message
      */
-    async serverMessage (): Promise<string[]> {
+    async serverReplies (): Promise<string[]> {
 
-        // console.log(`${this.constructor.name}.serverMessage()`);
+        // console.log(`${this.constructor.name}.serverReplies()`);
 
         const messages: string[] = [];
 
         // while server sends response to client continue to next line
         while ( true ) {
-            // console.log(`${this.constructor.name}.serverMessage() reader start reading`);
+            // console.log(`${this.constructor.name}.serverReplies() reader start reading`);
             const message = await this.#reader.readString('\n')
-                .catch( ( reason ) => { throw new Error(`${this.constructor.name}.serverMessage() this.#reader.readString() Error: ${reason.message}`)});
-            //console.log(`${this.constructor.name}.serverMessage() reader end reading: ${message}`);
+                .catch( ( reason ) => { throw new Error(`${this.constructor.name}.serverReplies() this.#reader.readString() Error: ${reason.message}`)});
+            //console.log(`${this.constructor.name}.serverReplies() reader end reading: ${message}`);
 
             if ( message === null ) {
                 // a custom Error message mimicing a std smtp server message
@@ -107,7 +107,7 @@ export class Conn implements Deno.Conn {
 
             messages.push( message );
 
-            // console.log(`${this.constructor.name}.serverMessage() message: ${message}. Server sent last line ?`);
+            // console.log(`${this.constructor.name}.serverReplies() message: ${message}. Server sent last line ?`);
 
             if ( isLastLine( message ) ) return messages;
         }

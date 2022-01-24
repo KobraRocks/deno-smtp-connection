@@ -18,7 +18,7 @@ if ( BASIC ) {
             port
         });
     
-        const serverResponse = await Conn.serverMessage();
+        const serverResponse = await Conn.serverReplies();
         const message = serverResponse.pop();
         
         const serverReady = message?.startsWith('220');
@@ -50,7 +50,7 @@ if ( TLS ) {
             port
         });
     
-        const serverResponse = await tlsConn.serverMessage();
+        const serverResponse = await tlsConn.serverReplies();
         const message = serverResponse.pop();
         
         const serverReady = message?.startsWith('220');
@@ -82,7 +82,7 @@ if ( STARTTLS ) {
             port
         });
     
-        const serverResponse = await tlsConn.serverMessage();
+        const serverResponse = await tlsConn.serverReplies();
         const message = serverResponse.pop();
         
         const serverReady = message?.startsWith('220');
